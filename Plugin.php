@@ -17,11 +17,14 @@ class Plugin extends ServiceProvider
 
         // Daftarkan menu
         $this->app->make(MenuManager::class)->add([
-            'title'  => 'Inventory',
-            'url'    => route('inventory.products.index'),
-            'icon'   => 'ti ti-package',
-            'order'  => 10,
-            'active' => 'inventory*',
+            'title'    => 'Inventory',
+            'url'      => route('inventory.products.index'),
+            'icon'     => 'ti ti-package',
+            'order'    => 10,
+            'active'   => 'inventory*',
+            'children' => [
+                ['title' => 'Products', 'url' => route('inventory.products.index'), 'icon' => 'ti ti-box', 'active' => 'inventory/products*'],
+            ],
         ]);
     }
 }
