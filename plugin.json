@@ -4,5 +4,9 @@
     "version": "1.0.0",
     "description": "Modul manajemen produk dan stok",
     "author": "Kamu",
-    "depends": []
+    "depends": [],
+    "permissions": [
+        {"name": "inventory.view",   "label": "View Inventory"},
+        {"name": "inventory.manage", "label": "Manage Inventory"}
+    ]
 }

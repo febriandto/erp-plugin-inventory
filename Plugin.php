@@ -19,13 +19,14 @@ class Plugin extends ServiceProvider
 
         $this->app->booted(function () {
             $this->app->make(MenuManager::class)->add([
-                'title'    => 'Inventory',
-                'url'      => route('inventory.products.index'),
-                'icon'     => 'ti ti-package',
-                'order'    => 10,
-                'active'   => 'inventory*',
-                'children' => [
-                    ['title' => 'Products', 'url' => route('inventory.products.index'), 'icon' => 'ti ti-box', 'active' => 'inventory/products*'],
+                'title'      => 'Inventory',
+                'url'        => route('inventory.products.index'),
+                'icon'       => 'ti ti-package',
+                'order'      => 10,
+                'active'     => 'inventory*',
+                'permission' => 'inventory.view',
+                'children'   => [
+                    ['title' => 'Products', 'url' => route('inventory.products.index'), 'icon' => 'ti ti-box', 'active' => 'inventory/products*', 'permission' => 'inventory.view'],
                 ],
             ]);
         });
